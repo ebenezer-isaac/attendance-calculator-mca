@@ -1,0 +1,23 @@
+{
+  "name": "attendance-calculator-mca",
+  "version": "1.0.0",
+  "description": "Calculate Attendance based on lecture hours registered on Google Calendar",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ebenezer-isaac/attendance-calculator-mca.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ebenezer-isaac/attendance-calculator-mca/issues"
+  },
+  "homepage": "https://github.com/ebenezer-isaac/attendance-calculator-mca#readme",
+  "dependencies": {
+    "googleapi": "^1.0.2",
+    "googleapis": "^92.0.0"
+  }
+}
