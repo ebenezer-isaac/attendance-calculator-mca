@@ -156,10 +156,8 @@ function getEventsList(auth) {
             }
         });
         let values = [];
-        let counter = 1;
         for (const subject in absents) {
             values.push({
-                'S.No': counter,
                 'Subject': subject,
                 'Total': totalLectures[subject],
                 'Conducted': conductedLectures[subject],
