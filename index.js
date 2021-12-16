@@ -76,7 +76,7 @@ function getEventsList(auth) {
         events.map((event, i) => {
             if (event.start.dateTime) {
                 let subject = event.summary.toLowerCase().replaceAll(" ", "")
-                if (subject.includes("assessment") || subject.includes("placement") || subject.includes("verification")) {
+                if (subject.includes("assessment") || subject.includes("placement") || subject.includes("verification") || subject.includes("exam") || subject.includes("demo")) {
                 } else {
                     if (subject === "cslab") {
                         subject = "cs"
