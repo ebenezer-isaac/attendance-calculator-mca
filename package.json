@@ -18,6 +18,7 @@
   "homepage": "https://github.com/ebenezer-isaac/attendance-calculator-mca#readme",
   "dependencies": {
     "googleapi": "^1.0.2",
-    "googleapis": "^92.0.0"
+    "googleapis": "^92.0.0",
+    "readline-sync": "^1.4.10"
   }
 }

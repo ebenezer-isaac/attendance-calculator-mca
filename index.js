@@ -1,21 +1,17 @@
 const fs = require('fs');
-const readline = require('readline');
+const reader = require('readline-sync');
 const {google} = require('googleapis');
 const absentCounter = require('./absentCounter')
 const absents = absentCounter()
 const SCOPES = ['https://www.googleapis.com/auth/calendar.readonly'];
 const TOKEN_PATH = 'token.json';
-let spiltDate = "";
-const rl = readline.createInterface({
-    input: process.stdin,
-    output: process.stdout,
-});
-rl.question("Enter split date (yyyy-mm-dd) : ", userInput => {
-    if (userInput.length === 0) {
-        const today = new Date();
-        spiltDate = `${today.getFullYear()}-${String(today.getMonth() + 1).padStart(2, '0')}-${String(today.getDate()).padStart(2, '0')}`
-    }
-})
+const today = new Date();
+let spiltDate = `${today.getFullYear()}-${String(today.getMonth() + 1).padStart(2, '0')}-${String(today.getDate()).padStart(2, '0')}`;
+const userInput = reader.question("Enter split date (yyyy-mm-dd) : ");
+if (userInput.length !== 0) {
+    spiltDate = userInput;
+}
+
 const pushToDict = (dict, key, value) => {
     if (dict.hasOwnProperty(key)) {
         dict[key] = dict[key] + value
@@ -141,6 +137,8 @@ function getEventsList(auth) {
                     } else if (startTime === "16:00:00" && endTime === "16:45:00") {
                         hour = 1
                     } else if (startTime === "09:20:00" && endTime === "11:20:00") {
+                        hour = 2
+                    } else if (startTime === "11:00:00" && endTime === "12:30:00") {
                         hour = 2
                     } else {
                         console.log(startTime, endTime)
