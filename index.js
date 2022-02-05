@@ -140,6 +140,8 @@ function getEventsList(auth) {
                         hour = 2
                     } else if (startTime === "11:00:00" && endTime === "12:30:00") {
                         hour = 2
+                    } else if (startTime === "15:00:00" && endTime === "16:30:00") {
+                        hour = 2
                     } else {
                         console.log(startTime, endTime)
                     }
@@ -167,5 +169,7 @@ function getEventsList(auth) {
             });
         }
         console.table(values);
+        // console.log(conductedLectures);
+        // console.log(totalLectures);
     });
 }
